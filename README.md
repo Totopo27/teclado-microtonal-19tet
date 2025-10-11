@@ -1,10 +1,8 @@
-# 🎹 Teclado Microtonal 19-TET
+# Teclado Microtonal 19-TET
 
 Un teclado hexagonal interactivo para explorar música microtonal en el sistema de temperamento igual de 19 notas por octava (19-TET).
 
-![Screenshot](assets/screenshot.png)
-
-## 🌟 Características
+## Características
 
 - **Disposición hexagonal** de teclas para fácil visualización de intervalos
 - **Sistema 19-TET** completo con 3 octavas + 1 nota adicional
@@ -17,18 +15,18 @@ Un teclado hexagonal interactivo para explorar música microtonal en el sistema 
 - **Soporte de teclado QWERTY** para tocar con el teclado de computadora
 - **Diseño responsive** que se adapta a diferentes tamaños de pantalla
 
-## 🚀 Uso
+## Uso
 
 ### Online
-Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge, Safari).
+Simplemente abre `index.html` en tu navegador web.
 
-### Con Max/MSP
+### Con Max/MSP (trabajo en proceso)
 1. Abre el proyecto en Max/MSP
 2. Carga el archivo HTML en un objeto `jweb`
 3. El teclado enviará mensajes MIDI mediante `window.max.outlet(noteValue, noteName, velocity)`
 
-## 🎵 Escalas incluidas
-
+## Escalas incluidas (trabajo en proceso)
+Las escalas adjuntas, están a modo de exploración, para probar funcionalidad de los códigos, más adelante se realizarán cambios en ellas para incorporar otras. 
 - **Jónico (Mayor)**: Do-Re-Mi-Fa-Sol-La-Si
 - **Dórico**: Do-Re-Mib-Fa-Sol-La-Sib
 - **Frigio**: Do-Reb-Mib-Fa-Sol-Lab-Sib
@@ -37,14 +35,14 @@ Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge
 - **Eólico (Menor)**: Do-Re-Mib-Fa-Sol-Lab-Sib
 - **Locrio**: Do-Reb-Mib-Fa-Solb-Lab-Sib
 
-## 🎮 Controles
+## Controles
 
 ### Ratón
 - **Clic en tecla**: Reproducir nota
 - **Mantener presionado**: Nota sostenida
 - **Hover**: Vista previa del color de activación
 
-### Teclado QWERTY (opcional)
+### Teclado QWERTY (opcional, trabajo en proceso)
 - Octava baja: `A S D F G H J` (teclas blancas), `W E T Y U` (teclas negras)
 - Octava media: `Z X C V B N M`
 
@@ -55,7 +53,7 @@ Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge
 - **Combinar escalas**: Activar modo de superposición de escalas
 - **Limpiar escalas**: Resetear visualización de escalas
 
-## 📐 Teoría del 19-TET
+##  Teoría del 19-TET (en proceso)
 
 El temperamento igual de 19 notas divide la octava en 19 partes iguales:
 - **Razón**: 2^(1/19) ≈ 1.0372
