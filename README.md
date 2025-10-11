@@ -63,3 +63,6 @@ El temperamento igual de 19 notas divide la octava en 19 partes iguales:
 - **Ventajas**: Mejor aproximación a la tercera mayor pura que el 12-TET
 
 ### Disposición del teclado
+Octava 0 (baja):  valores 43-61
+Octava 1 (media): valores 62-80
+Octava 2 (alta):  valores 81-100
