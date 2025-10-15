@@ -10,23 +10,29 @@ Un teclado hexagonal interactivo para explorar música microtonal en el sistema 
 - **Modo de combinación de escalas** para explorar superposiciones armónicas
 - **7 modos griegos** adaptados al temperamento 19-TET
 - **Controles de transposición** de octava (+8va, -8va, Reset)
-- **Información en tiempo real**: nota, frecuencia y octava actual
+- **Monitor de polifonía en tiempo real**: 
+  - Visualización de todas las notas activas simultáneamente
+  - Contador de voces activas
+  - Información de frecuencia y octava por cada nota
+  - Chips de colores según la octava
+  - Orden cronológico de notas pulsadas
+- **Información monofónica**: Muestra la última nota tocada
 - **Integración con Max/MSP** mediante `window.max.outlet()`
-- **Soporte de teclado QWERTY** para tocar con el teclado de computadora
+- **Soporte completo de teclado QWERTY** (19 teclas + controles)
 - **Diseño responsive** que se adapta a diferentes tamaños de pantalla
 
-## Uso
+##  Uso
 
 ### Online
-Simplemente abre `index.html` en tu navegador web.
+Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge, Safari).
 
-### Con Max/MSP (trabajo en proceso)
+### Con Max/MSP
 1. Abre el proyecto en Max/MSP
 2. Carga el archivo HTML en un objeto `jweb`
 3. El teclado enviará mensajes MIDI mediante `window.max.outlet(noteValue, noteName, velocity)`
 
-## Escalas incluidas (trabajo en proceso)
-Las escalas adjuntas, están a modo de exploración, para probar funcionalidad de los códigos, más adelante se realizarán cambios en ellas para incorporar otras. 
+##  Escalas incluidas
+
 - **Jónico (Mayor)**: Do-Re-Mi-Fa-Sol-La-Si
 - **Dórico**: Do-Re-Mib-Fa-Sol-La-Sib
 - **Frigio**: Do-Reb-Mib-Fa-Sol-Lab-Sib
@@ -35,25 +41,50 @@ Las escalas adjuntas, están a modo de exploración, para probar funcionalidad d
 - **Eólico (Menor)**: Do-Re-Mib-Fa-Sol-Lab-Sib
 - **Locrio**: Do-Reb-Mib-Fa-Solb-Lab-Sib
 
-## Controles
+##  Controles
 
 ### Ratón
 - **Clic en tecla**: Reproducir nota
 - **Mantener presionado**: Nota sostenida
 - **Hover**: Vista previa del color de activación
 
-### Teclado QWERTY (opcional, trabajo en proceso)
-- Octava baja: `A S D F G H J` (teclas blancas), `W E T Y U` (teclas negras)
-- Octava media: `Z X C V B N M`
+### Teclado QWERTY - Octava Baja Completa (19 notas)
+
+#### Notas musicales:
+```
+┌─────────────────────────────────────────────┐
+│ Fila Q:  Q   W   E   R   T   Y   U         │
+│         Do  Do# Reb  Re  Re# Mib  Mi        │
+│         (0) (1) (2) (3) (4) (5) (6)        │
+├─────────────────────────────────────────────┤
+│ Fila A:  A   S   D   F   G   H   J         │
+│         Mi#  Fa  Fa# Solb Sol Sol# Lab      │
+│         (7) (8) (9) (10)(11)(12)(13)       │
+├─────────────────────────────────────────────┤
+│ Fila Z:  Z   X   C   V   B                 │
+│         La  La# Sib  Si  Si#                │
+│         (14)(15)(16)(17)(18)               │
+└─────────────────────────────────────────────┘
+```
+
+#### Controles de octava:
+- **↑ Flecha Arriba**: +8va (subir octava)
+- **↓ Flecha Abajo**: -8va (bajar octava)  
+- **Barra Espaciadora**: Reset octava a 0
 
 ### Controles de interfaz
-- **+8va / -8va**: Transponer octavas
-- **Reset Octava**: Volver a octava base
+- **+8va / -8va**: Transponer octavas (también con flechas ↑↓)
+- **Reset Octava**: Volver a octava base (también con Espacio)
 - **Selector de escala**: Elegir modo griego
 - **Combinar escalas**: Activar modo de superposición de escalas
 - **Limpiar escalas**: Resetear visualización de escalas
 
-##  Teoría del 19-TET (en proceso)
+### Atajos útiles
+- Mantén presionadas múltiples teclas para tocar acordes
+- Usa las flechas mientras tocas para cambiar de octava en tiempo real
+- El espacio te permite volver rápidamente a la octava central
+
+##  Teoría del 19-TET
 
 El temperamento igual de 19 notas divide la octava en 19 partes iguales:
 - **Razón**: 2^(1/19) ≈ 1.0372

@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="header">
-    <h1>Teclado 19-TET</h1>
+    <h1>🎹 Teclado Microtonal 19-TET</h1>
     <p>Sistema de temperamento igual de 19 notas por octava</p>
   </div>
 
@@ -51,24 +51,37 @@
   </div>
 
   <div class="info-panel">
-    <h3>Información en tiempo real</h3>
-    <div class="info-item">
-      <strong>Nota:</strong> <span id="current-note">-</span>
+      <h3>Información en tiempo real</h3>
+      
+      <!-- Modo Monofonía -->
+      <div class="info-section">
+        <h4>Última nota tocada</h4>
+        <div class="info-item">
+          <strong>Nota:</strong> <span id="current-note">-</span>
+        </div>
+        <div class="info-item">
+          <strong>Frecuencia:</strong> <span id="current-freq">-</span> Hz
+        </div>
+        <div class="info-item">
+          <strong>Octava:</strong> <span id="current-octave">0</span>
+        </div>
+      </div>
+
+      <!-- Modo Polifonía -->
+      <div class="info-section polyphony-section">
+        <h4>Polifonía Activa <span id="poly-count" class="poly-counter">0</span></h4>
+        <div id="active-notes-container" class="active-notes-grid">
+          <span class="no-notes-message">No hay notas activas</span>
+        </div>
+      </div>
     </div>
-    <div class="info-item">
-      <strong>Frecuencia:</strong> <span id="current-freq">-</span> Hz
-    </div>
-    <div class="info-item">
-      <strong>Octava:</strong> <span id="current-octave">0</span>
-    </div>
-  </div>
 
   <div class="keyboard-wrapper">
     <div class="keyboard-container" id="keyboard-container"></div>
   </div>
 
   <footer class="footer">
-    <p>Desarrollado para exploración musical microtonal | Compatible con Max/MSP (trabajo en proceso)</p>
+    <p>Desarrollado para exploración musical microtonal | Compatible con Max/MSP</p>
     <p><a href="https://github.com/tu-usuario/teclado-microtonal-19tet" target="_blank">Ver en GitHub</a></p>
   </footer>
 
