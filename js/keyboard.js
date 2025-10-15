@@ -73,7 +73,11 @@ function generateKeyboard() {
 function playNote(config) {
   if (activeKeys.has(config.id)) return;
   
-  activeKeys.set(config.id, true);
+  activeKeys.set(config.id, {
+    config: config,
+    timestamp: Date.now()
+  });
+  
   const element = document.getElementById(config.id).querySelector('.hexagon-in2');
   element.classList.add('active');
   
@@ -86,10 +90,13 @@ function playNote(config) {
     window.max.outlet(adjustedValue, config.name, "127");
   }
   
-  // Actualizar panel de información
+  // Actualizar panel de información - ÚLTIMA NOTA (monofonía)
   document.getElementById('current-note').textContent = `${config.name} (${config.text})`;
   document.getElementById('current-freq').textContent = frequency ? frequency.toFixed(2) : '-';
   document.getElementById('current-octave').textContent = realOctave;
+  
+  // Actualizar monitor de polifonía
+  updatePolyphonyDisplay();
 }
 
 // Detener nota
@@ -105,6 +112,56 @@ function stopNote(config) {
   if (window.max && typeof window.max.outlet === 'function') {
     window.max.outlet(adjustedValue, config.name, "0");
   }
+  
+  // Actualizar monitor de polifonía
+  updatePolyphonyDisplay();
+}
+
+// Nueva función: Actualizar display de polifonía
+function updatePolyphonyDisplay() {
+  const container = document.getElementById('active-notes-container');
+  const counter = document.getElementById('poly-count');
+  
+  // Actualizar contador
+  counter.textContent = activeKeys.size;
+  
+  // Limpiar contenedor
+  container.innerHTML = '';
+  
+  // Si no hay notas activas
+  if (activeKeys.size === 0) {
+    container.innerHTML = '<span class="no-notes-message">No hay notas activas</span>';
+    return;
+  }
+  
+  // Convertir Map a Array y ordenar por timestamp (orden de pulsación)
+  const activeNotesArray = Array.from(activeKeys.entries())
+    .sort((a, b) => a[1].timestamp - b[1].timestamp);
+  
+  // Crear chip para cada nota activa
+  activeNotesArray.forEach(([keyId, data]) => {
+    const config = data.config;
+    const frequency = getFrequency(config.value);
+    const realOctave = getRealOctave(config.value) + currentOctave;
+    
+    const chip = document.createElement('div');
+    chip.className = 'note-chip';
+    chip.setAttribute('data-octave', realOctave);
+    chip.setAttribute('data-key', keyId);
+    
+    chip.innerHTML = `
+      <span class="note-name">${config.name}</span>
+      <span class="note-freq">${frequency ? frequency.toFixed(1) : '-'} Hz</span>
+      <span class="note-octave">Oct ${realOctave}</span>
+    `;
+    
+    // Animación de salida al hacer clic
+    chip.addEventListener('click', () => {
+      stopNote(config);
+    });
+    
+    container.appendChild(chip);
+  });
 }
 
 // Actualizar visualización de escala
