@@ -24,7 +24,7 @@ Un teclado hexagonal interactivo para explorar música microtonal en el sistema 
 ##  Uso
 
 ### Online
-Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge, Safari).
+Simplemente abre `index.html` en tu navegador web.
 
 ### Con Max/MSP
 1. Abre el proyecto en Max/MSP
@@ -33,13 +33,13 @@ Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge
 
 ##  Escalas incluidas
 
-- **Jónico (Mayor)**: Do-Re-Mi-Fa-Sol-La-Si
-- **Dórico**: Do-Re-Mib-Fa-Sol-La-Sib
-- **Frigio**: Do-Reb-Mib-Fa-Sol-Lab-Sib
-- **Lidio**: Do-Re-Mi-Fa#-Sol-La-Si
-- **Mixolidio**: Do-Re-Mi-Fa-Sol-La-Sib
-- **Eólico (Menor)**: Do-Re-Mib-Fa-Sol-Lab-Sib
-- **Locrio**: Do-Reb-Mib-Fa-Solb-Lab-Sib
+- **Jónico (Mayor)**: C-D-E-F-G-A-B
+- **Dórico**: C-D-E♭-F-G-A-B♭
+- **Frigio**: C-Db-E♭-F-G-A♭-B♭
+- **Lidio**: C-D-E-F♯-G-A-B
+- **Mixolidio**: C-D-E-F-G-A-B♭
+- **Eólico (Menor)**: C-D-E♭-F-G-A♭-B♭
+- **Locrio**: C-D♭-E♭-F-G♭-A♭-B♭
 
 ##  Controles
 
@@ -54,15 +54,15 @@ Simplemente abre `index.html` en tu navegador web moderno (Chrome, Firefox, Edge
 ```
 ┌─────────────────────────────────────────────┐
 │ Fila Q:  Q   W   E   R   T   Y   U         │
-│         Do  Do# Reb  Re  Re# Mib  Mi        │
+│         C  C♯ D♭  D  D# E♭  E        │
 │         (0) (1) (2) (3) (4) (5) (6)        │
 ├─────────────────────────────────────────────┤
 │ Fila A:  A   S   D   F   G   H   J         │
-│         Mi#  Fa  Fa# Solb Sol Sol# Lab      │
+│         E♯  F  F♯ G♭ G G♯ A♭      │
 │         (7) (8) (9) (10)(11)(12)(13)       │
 ├─────────────────────────────────────────────┤
 │ Fila Z:  Z   X   C   V   B                 │
-│         La  La# Sib  Si  Si#                │
+│         A  A♯ B♭  B  B♯                │
 │         (14)(15)(16)(17)(18)               │
 └─────────────────────────────────────────────┘
 ```
