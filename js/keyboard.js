@@ -48,6 +48,7 @@ function generateKeyboard() {
       <div class="hexagon-in1">
         <div class="hexagon-in2 ${colorClass}" data-value="${config.value}" data-name="${config.name}" data-note="${noteIndex}">
           <div class="hexagon-text">${config.text}</div>
+          <div class="hexagon-nota-text">${config.nota}</div>
         </div>
       </div>
     `;
@@ -130,6 +131,7 @@ function playNote(config) {
   
   // Actualizar panel de información - ÚLTIMA NOTA (monofonía)
   document.getElementById('current-note').textContent = `${config.name} (${config.text})`;
+  document.getElementById('current-nota').textContent = config.nota || config.name;
   document.getElementById('current-freq').textContent = frequency ? frequency.toFixed(2) : '-';
   document.getElementById('current-octave').textContent = realOctave;
   

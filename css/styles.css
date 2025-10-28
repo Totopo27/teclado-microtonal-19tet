@@ -163,14 +163,31 @@ select {
 
 .hexagon-text {
   position: absolute;
-  top: 50%;
+  top: 30%; /* Posicionado en la mitad superior */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centrado horizontalmente */
   font-size: 18px;
   font-weight: bold;
   color: #000000;
   pointer-events: none;
   user-select: none;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.hexagon-nota-text {
+  position: absolute;
+  top: 70%; /* Posicionado en la mitad inferior */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado horizontalmente */
+  font-size: 14px;
+  font-weight: normal;
+  color: #333333;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  opacity: 0.9;
 }
 
 .info-panel {
